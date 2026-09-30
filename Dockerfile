@@ -11,7 +11,7 @@ RUN npm install
 
 COPY . .
 
-ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/postgres?schema=public"
+ENV DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres?schema=public
 
 RUN npx prisma migrate dev
 RUN npx primsa generate
