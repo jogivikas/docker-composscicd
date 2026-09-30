@@ -17,4 +17,7 @@ RUN npx prisma migrate dev
 RUN npx primsa generate
 RUN  npx run build 
 
+
+EXPOSE 3000
+
 CMD ["npm","start"]
