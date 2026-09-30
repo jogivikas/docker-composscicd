@@ -4,30 +4,28 @@ import { PrismaClient } from "@prisma/client";
 
 const app = express();
 const PORT = 3000;
-const prismaClient=new PrismaClient();
+const prismaClient = new PrismaClient();
 
 // Middleware
 app.use(express.json());
 
 // Routes
-app.get("/", async(req, res) => {
- const data=await prismaClient.user.findMany()
-    
-  
+app.get("/", async (req, res) => {
+  const data = await prismaClient.user.findMany();
+
   res.json({
-    data
-  })
-  
+    data,
+  });
 });
 
-app.post("/",async(req,res)=>{
+app.post("/", async (req, res) => {
   await prismaClient.user.create({
-    data:{
-      username:Math.random().toString(),
-    password:Math.random().toString()
-    }
-  })
-})
+    data: {
+      username: Math.random().toString(),
+      password: Math.random().toString(),
+    },
+  });
+});
 
 app.get("/api/health", (req, res) => {
   res.json({
