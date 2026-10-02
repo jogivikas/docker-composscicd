@@ -1,6 +1,6 @@
 import express from "express";
 import { Prisma } from "./generated/prisma/browser";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "./generated/prisma/client";
 
 const app = express();
 const PORT = 3000;
